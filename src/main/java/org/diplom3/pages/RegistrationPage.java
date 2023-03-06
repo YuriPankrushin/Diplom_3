@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Random;
+
 public class RegistrationPage extends AbstractPage {
     public final WebDriver driver;
 
@@ -17,7 +19,10 @@ public class RegistrationPage extends AbstractPage {
     private final By registrationHeader = By.xpath(".//h2[text()='Регистрация']");
 
     //Кнопка Зарегистрироваться
-    private final By registrationButton = By.xpath(".//h2[text()='Вход']");
+    private final By registrationButton = By.xpath(".//button[text()='Зарегистрироваться']");
+
+    //Валидация пароля
+    private final By passwordValidationError = By.xpath(".//p[text()='Некорректный пароль']");
 
     public void observeRegistrationHeader(){
         new WebDriverWait(driver, 3)
@@ -25,7 +30,32 @@ public class RegistrationPage extends AbstractPage {
     }
 
     //Нажать кнопку Зарегистрироваться
-    public void pressLoginButton() {
+    public void pressRegistrationButton() {
         driver.findElement(registrationButton).click();
+    }
+
+    public void observePasswordValidationAppeared(){
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.visibilityOfElementLocated(passwordValidationError));
+    }
+
+    public void setNewUserCorrectData(){
+        //Проверить правильный заголовок страницы
+        observeRegistrationHeader();
+        //Ввести данные для регистрации: имя, email, пароль (с использованием случайных чисел)
+        Random random = new Random();
+        setName("user" + random.nextInt(10000000));
+        setEmail("box" + random.nextInt(10000000) + "@yandex.ru");
+        setPassword("password");
+    }
+
+    public void setNewUserDataWithShortPassword(){
+        //Проверить правильный заголовок страницы
+        observeRegistrationHeader();
+        //Ввести данные для регистрации: имя, email, пароль (с использованием случайных чисел)
+        Random random = new Random();
+        setName("user" + random.nextInt(10000000));
+        setEmail("box" + random.nextInt(10000000) + "@yandex.ru");
+        setPassword("short");
     }
 }

@@ -2,6 +2,8 @@ package org.diplom3.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AbstractPage {
 
@@ -57,6 +59,24 @@ public class AbstractPage {
         driver.findElement(stellarBurgerLogo).click();
     }
 
+    //Проверить видимость поля Имя
+    public void observeNameField() {
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.elementToBeClickable(nameField));
+    }
+
+    //Проверить видимость поля Email
+    public void observeEmailField() {
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.elementToBeClickable(emailField));
+    }
+
+    //Проверить видимость поля Пароль
+    public void observePasswordField() {
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.elementToBeClickable(passwordField));
+    }
+
     //Ввести Имя
     public void setName(String name) {
         driver.findElement(nameField).click();
@@ -70,7 +90,7 @@ public class AbstractPage {
     }
 
     //Ввести Пароль
-    public void pressLogoButton(String password) {
+    public void setPassword(String password) {
         driver.findElement(passwordField).click();
         driver.findElement(passwordField).sendKeys(password);
     }

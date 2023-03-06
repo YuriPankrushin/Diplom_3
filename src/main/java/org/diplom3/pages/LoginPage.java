@@ -45,4 +45,16 @@ public class LoginPage extends AbstractPage {
     public void pressPasswordResetLink() {
         driver.findElement(resetPasswordLink).click();
     }
+
+    public void goToRegistrationPage() {
+        pressAccountButton();
+        observeLoginHeader();
+        pressRegistrationLink();
+    }
+
+    public void verifyLoginPageFields() {
+        observeLoginHeader();
+        observeEmailField();
+        observePasswordField();
+    }
 }

@@ -7,8 +7,9 @@
     <list default="true" id="8c4d214d-a9f1-4fa7-b82a-8d3d170a8986" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/AbstractPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/AbstractPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/ConstructorPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/ConstructorPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/RegistrationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/RegistrationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diplom3/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diplom3/utils/Constants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +43,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.RegistrationTest.registerNewUserWithPasswordLessThenSixSymbols">
-    <configuration name="RegistrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.org.diplom3 in Diplom_3">
+    <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diplom_3" />
       <extension name="coverage">
         <pattern>
@@ -52,13 +53,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.diplom3" />
-      <option name="MAIN_CLASS_NAME" value="org.diplom3.RegistrationTest" />
+      <option name="MAIN_CLASS_NAME" value="org.diplom3.LoginTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegistrationTest.registerNewUserWithCorrectNameEmailPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTest.authThroughAccountButton" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diplom_3" />
       <extension name="coverage">
         <pattern>
@@ -67,14 +68,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.diplom3" />
-      <option name="MAIN_CLASS_NAME" value="org.diplom3.RegistrationTest" />
-      <option name="METHOD_NAME" value="registerNewUserWithCorrectNameEmailPassword" />
+      <option name="MAIN_CLASS_NAME" value="org.diplom3.LoginTest" />
+      <option name="METHOD_NAME" value="authThroughAccountButton" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegistrationTest.registerNewUserWithPasswordLessThenSixSymbols" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTest.authThroughLoginToAccountButton" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diplom_3" />
       <extension name="coverage">
         <pattern>
@@ -83,18 +84,50 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.diplom3" />
-      <option name="MAIN_CLASS_NAME" value="org.diplom3.RegistrationTest" />
-      <option name="METHOD_NAME" value="registerNewUserWithPasswordLessThenSixSymbols" />
+      <option name="MAIN_CLASS_NAME" value="org.diplom3.LoginTest" />
+      <option name="METHOD_NAME" value="authThroughLoginToAccountButton" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest.authThroughRegistrationPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.diplom3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.diplom3" />
+      <option name="MAIN_CLASS_NAME" value="org.diplom3.LoginTest" />
+      <option name="METHOD_NAME" value="authThroughRegistrationPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="org.diplom3 in Diplom_3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.diplom3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.diplom3" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RegistrationTest.registerNewUserWithPasswordLessThenSixSymbols" />
-        <item itemvalue="JUnit.RegistrationTest" />
-        <item itemvalue="JUnit.RegistrationTest.registerNewUserWithCorrectNameEmailPassword" />
+        <item itemvalue="JUnit.org.diplom3 in Diplom_3" />
+        <item itemvalue="JUnit.LoginTest" />
+        <item itemvalue="JUnit.LoginTest.authThroughRegistrationPage" />
+        <item itemvalue="JUnit.LoginTest.authThroughAccountButton" />
+        <item itemvalue="JUnit.LoginTest.authThroughLoginToAccountButton" />
       </list>
     </recent_temporary>
   </component>

@@ -52,9 +52,21 @@ public class LoginPage extends AbstractPage {
         pressRegistrationLink();
     }
 
+    public void goToResetPasswordPage() {
+        pressAccountButton();
+        observeLoginHeader();
+        pressPasswordResetLink();
+    }
+
     public void verifyLoginPageFields() {
         observeLoginHeader();
         observeEmailField();
         observePasswordField();
+    }
+
+    public void loginWith(String email, String password) {
+        setEmail(email);
+        setPassword(password);
+        pressLoginButton();
     }
 }

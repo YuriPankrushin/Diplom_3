@@ -15,7 +15,7 @@ public class ConstructorPage extends AbstractPage {
     private final By loginToAccountButton = By.xpath(".//button[text()='Войти в аккаунт']");
 
     //Нажать кнопку Войти в аккаунт
-    public void pressLoginButton() {
+    public void pressLoginToAccountButton() {
         driver.findElement(loginToAccountButton).click();
     }
 }

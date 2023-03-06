@@ -1,6 +1,7 @@
 package org.diplom3.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,12 +20,10 @@ public class AbstractPage {
     //Кнопка Конструктор
     private final By constructorButton = By.xpath(".//p[text()='Конструктор']");
 
-    //Кнопка Лента Заказов
-    private final By lentaButton = By.xpath(".//p[text()='Лента Заказов']");
-
     //Кнопка Личный Кабинет
     private final By accountButton = By.xpath(".//p[text()='Личный Кабинет']");
 
+    //Ссылка Войти (располагается на страницах регистрации и сброса пароля)
     private final By loginLink = By.xpath(".//a[text()='Войти']");
 
     //Поле Имя
@@ -36,27 +35,21 @@ public class AbstractPage {
     //Поле Пароль
     private final By passwordField = By.xpath(".//div[contains(@class, 'password')]/input");
 
-    //Кнопка Войти
-    private final By loginButton = By.xpath(".//button[text()='Войти']");
-
     public void pressAccountButton() {
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();",driver.findElement(accountButton));
         driver.findElement(accountButton).click();
-    }
-
-    public void pressLoginLink() {
-        driver.findElement(loginLink).click();
     }
 
     public void pressConstructorButton() {
         driver.findElement(constructorButton).click();
     }
 
-    public void pressLentaButton() {
-        driver.findElement(lentaButton).click();
-    }
-
     public void pressLogoButton() {
         driver.findElement(stellarBurgerLogo).click();
+    }
+
+    public void pressLoginLink() {
+        driver.findElement(loginLink).click();
     }
 
     //Проверить видимость поля Имя

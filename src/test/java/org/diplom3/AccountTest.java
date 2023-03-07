@@ -1,33 +1,18 @@
 package org.diplom3;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.diplom3.pages.AbstractPage;
 import org.diplom3.pages.AccountPage;
 import org.diplom3.pages.ConstructorPage;
 import org.diplom3.pages.LoginPage;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-import static org.diplom3.utils.Constants.BASE_URL;
 import static org.diplom3.utils.Constants.LOGIN;
 import static org.diplom3.utils.Constants.PASSWORD;
 
-public class AccountTest {
-    private WebDriver driver;
-
-    @Before
-    public void startUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        //Открываем веб сайт
-        driver.get(BASE_URL);
-    }
+public class AccountTest extends AbstractTest{
 
     @Test
     @DisplayName("Проверь переход по клику на «Личный кабинет»")
@@ -53,10 +38,5 @@ public class AccountTest {
         Assert.assertEquals("Имя должно совпадать с имененм при регистрации пользователя", "Юрий", accountPage.getValueFromField("Имя"));
         Assert.assertEquals("Имя должно совпадать с имененм при регистрации пользователя", "pankrushinyuri@mail.ru", accountPage.getValueFromField("Логин"));
         Assert.assertEquals("Имя должно совпадать с имененм при регистрации пользователя", "*****", accountPage.getValueFromField("Пароль"));
-    }
-
-    @After
-    public void teardown() {
-        driver.quit();
     }
 }

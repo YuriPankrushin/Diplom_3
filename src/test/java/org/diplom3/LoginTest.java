@@ -1,32 +1,17 @@
 package org.diplom3;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.diplom3.pages.AbstractPage;
 import org.diplom3.pages.AccountPage;
 import org.diplom3.pages.ConstructorPage;
 import org.diplom3.pages.LoginPage;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-import static org.diplom3.utils.Constants.BASE_URL;
 import static org.diplom3.utils.Constants.LOGIN;
 import static org.diplom3.utils.Constants.PASSWORD;
 
 public class LoginTest extends AbstractTest {
-    private WebDriver driver;
-
-    @Before
-    public void startUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        //Открываем веб сайт
-        driver.get(BASE_URL);
-    }
 
     @Test
     @DisplayName("Вход по кнопке «Войти в аккаунт» на главной странице")
@@ -114,10 +99,5 @@ public class LoginTest extends AbstractTest {
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);
         accountPage.observeNotificationText();
-    }
-
-    @After
-    public void teardown() {
-        driver.quit();
     }
 }

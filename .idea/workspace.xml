@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c4d214d-a9f1-4fa7-b82a-8d3d170a8986" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/AccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/AccountPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/ConstructorPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/ConstructorPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/diplom3/AbstractTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diplom3/AbstractTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/diplom3/AccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diplom3/AccountTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,8 +112,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AccountTest.accessToAccountTest" />
-        <item itemvalue="JUnit.All in Diplom_3" />
         <item itemvalue="JUnit.AccountTest" />
+        <item itemvalue="JUnit.All in Diplom_3" />
         <item itemvalue="JUnit.org.diplom3 in Diplom_3" />
         <item itemvalue="JUnit.LoginTest" />
       </list>

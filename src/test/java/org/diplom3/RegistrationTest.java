@@ -1,30 +1,12 @@
 package org.diplom3;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.diplom3.pages.LoginPage;
 import org.diplom3.pages.RegistrationPage;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import static org.diplom3.utils.Constants.BASE_URL;
-
 
 public class RegistrationTest extends AbstractTest {
-
-    private WebDriver driver;
-
-    @Before
-    public void startUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        //Открываем веб сайт
-        driver.get(BASE_URL);
-    }
 
     @Test
     @DisplayName("Успешная регистрация")
@@ -58,10 +40,5 @@ public class RegistrationTest extends AbstractTest {
         registrationPage.pressRegistrationButton();
         //Проверить валидацию пароля
         registrationPage.observePasswordValidationAppeared();
-    }
-
-    @After
-    public void teardown() {
-        driver.quit();
     }
 }

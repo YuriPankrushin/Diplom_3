@@ -15,10 +15,14 @@ public class ConstructorPage extends AbstractPage {
 
     //Кнопка Войти в аккаунт
     private final By loginToAccountButton = By.xpath(".//button[text()='Войти в аккаунт']");
+
+    //Кнопка Оформить заказ
     private final By makeOrder = By.xpath(".//button[text()='Оформить заказ']");
 
+    //Заголовок Соберите бургер
     private final By mainHeader = By.xpath(".//h1[text()='Соберите бургер']");
 
+    //Корзина для ингридиентов
     private final By burgerConstructorBasket = By.xpath(".//ul[contains(@class, 'basket')]");
 
     //Нажать кнопку Войти в аккаунт
@@ -26,17 +30,31 @@ public class ConstructorPage extends AbstractPage {
         driver.findElement(loginToAccountButton).click();
     }
 
+    //Проверить наличие кнопки Оформить заказ
     public void observeMakeOrderButton() {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(makeOrder));
     }
+
+    //Проверить наличие заголовка
     public void observeMainHeader() {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(mainHeader));
     }
+
+    //Проверить наличие корзины для ингридиентов
     public void observeBurgerConstructorBasket() {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(burgerConstructorBasket));
     }
 
+    //Нажать на вкладку ингридиентов
+    public void clickOnIngredientTab(String ingredientTabName) {
+        driver.findElement(By.xpath(String.format(".//div[./span[text()='%s']]", ingredientTabName))).click();
+    }
+
+    //Вернуть класс вкладки ингридиентов, для проверки активности
+    public String returnIsCurrentFlag(String ingredientTabName) {
+        return driver.findElement(By.xpath(String.format(".//div[./span[text()='%s']]", ingredientTabName))).getAttribute("class");
+    }
 }

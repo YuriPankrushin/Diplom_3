@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c4d214d-a9f1-4fa7-b82a-8d3d170a8986" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/AccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/AccountPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/diplom3/HeaderTabsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diplom3/HeaderTabsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/ConstructorPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/ConstructorPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +40,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.LogoutTest">
+  <component name="RunManager" selected="JUnit.ConstructorTest.logoutButtonClickShouldRemoveUserAuthorization">
     <configuration name="AccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diplom_3" />
       <extension name="coverage">
@@ -73,10 +72,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in Diplom_3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConstructorTest.logoutButtonClickShouldRemoveUserAuthorization" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diplom_3" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.diplom3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.diplom3" />
+      <option name="MAIN_CLASS_NAME" value="org.diplom3.ConstructorTest" />
+      <option name="METHOD_NAME" value="logoutButtonClickShouldRemoveUserAuthorization" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -113,11 +120,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ConstructorTest.logoutButtonClickShouldRemoveUserAuthorization" />
         <item itemvalue="JUnit.LogoutTest" />
         <item itemvalue="JUnit.HeaderTabsTest" />
         <item itemvalue="JUnit.AccountTest.accessToAccountTest" />
         <item itemvalue="JUnit.AccountTest" />
-        <item itemvalue="JUnit.All in Diplom_3" />
       </list>
     </recent_temporary>
   </component>

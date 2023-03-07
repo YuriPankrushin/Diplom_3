@@ -15,13 +15,13 @@ public class AbstractPage {
     }
 
     //Основное лого
-    private final By stellarBurgerLogo = By.xpath(".//div[contains(@class, 'AppHeader')]");
+    public static final By stellarBurgerLogo = By.xpath(".//div[contains(@class, 'AppHeader')]");
 
     //Кнопка Конструктор
-    private final By constructorButton = By.xpath(".//p[text()='Конструктор']");
+    public static final By constructorButton = By.xpath(".//p[text()='Конструктор']");
 
     //Кнопка Личный Кабинет
-    private final By accountButton = By.xpath(".//p[text()='Личный Кабинет']");
+    public static final By accountButton = By.xpath(".//p[text()='Личный Кабинет']");
 
     //Ссылка Войти (располагается на страницах регистрации и сброса пароля)
     private final By loginLink = By.xpath(".//a[text()='Войти']");
@@ -35,17 +35,9 @@ public class AbstractPage {
     //Поле Пароль
     private final By passwordField = By.xpath(".//div[contains(@class, 'password')]/input");
 
-    public void pressAccountButton() {
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();",driver.findElement(accountButton));
-        driver.findElement(accountButton).click();
-    }
-
-    public void pressConstructorButton() {
-        driver.findElement(constructorButton).click();
-    }
-
-    public void pressLogoButton() {
-        driver.findElement(stellarBurgerLogo).click();
+    public void pressTabButton(By tab) {
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();",driver.findElement(tab));
+        driver.findElement(tab).click();
     }
 
     public void pressLoginLink() {

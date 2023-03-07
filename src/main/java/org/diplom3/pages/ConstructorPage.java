@@ -17,6 +17,10 @@ public class ConstructorPage extends AbstractPage {
     private final By loginToAccountButton = By.xpath(".//button[text()='Войти в аккаунт']");
     private final By makeOrder = By.xpath(".//button[text()='Оформить заказ']");
 
+    private final By mainHeader = By.xpath(".//h1[text()='Соберите бургер']");
+
+    private final By burgerConstructorBasket = By.xpath(".//ul[contains(@class, 'basket')]");
+
     //Нажать кнопку Войти в аккаунт
     public void pressLoginToAccountButton() {
         driver.findElement(loginToAccountButton).click();
@@ -26,4 +30,13 @@ public class ConstructorPage extends AbstractPage {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(makeOrder));
     }
+    public void observeMainHeader() {
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.visibilityOfElementLocated(mainHeader));
+    }
+    public void observeBurgerConstructorBasket() {
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.visibilityOfElementLocated(burgerConstructorBasket));
+    }
+
 }

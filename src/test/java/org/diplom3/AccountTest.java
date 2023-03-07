@@ -9,6 +9,7 @@ import org.diplom3.pages.LoginPage;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.diplom3.pages.AbstractPage.accountButton;
 import static org.diplom3.utils.Constants.LOGIN;
 import static org.diplom3.utils.Constants.PASSWORD;
 
@@ -20,7 +21,7 @@ public class AccountTest extends AbstractTest{
     public void accessToAccountTest() {
         //Нажимаем на кнопку Личный кабинет
         AbstractPage abstractPage = new AbstractPage(driver);
-        abstractPage.pressAccountButton();
+        abstractPage.pressTabButton(accountButton);
         //Авторизуем пользователя
         LoginPage loginPage = new LoginPage(driver);
         loginPage.loginWith(LOGIN, PASSWORD);
@@ -30,7 +31,7 @@ public class AccountTest extends AbstractTest{
         constructorPage.observeMakeOrderButton();
 
         //Переходим в личный кабинет
-        constructorPage.pressAccountButton();
+        constructorPage.pressTabButton(accountButton);
 
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);

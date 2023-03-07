@@ -47,13 +47,13 @@ public class LoginPage extends AbstractPage {
     }
 
     public void goToRegistrationPage() {
-        pressAccountButton();
+        pressTabButton(accountButton);
         observeLoginHeader();
         pressRegistrationLink();
     }
 
     public void goToResetPasswordPage() {
-        pressAccountButton();
+        pressTabButton(accountButton);
         observeLoginHeader();
         pressPasswordResetLink();
     }

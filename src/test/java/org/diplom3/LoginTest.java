@@ -8,6 +8,7 @@ import org.diplom3.pages.ConstructorPage;
 import org.diplom3.pages.LoginPage;
 import org.junit.Test;
 
+import static org.diplom3.pages.AbstractPage.accountButton;
 import static org.diplom3.utils.Constants.LOGIN;
 import static org.diplom3.utils.Constants.PASSWORD;
 
@@ -27,7 +28,7 @@ public class LoginTest extends AbstractTest {
         loginPage.loginWith(LOGIN, PASSWORD);
 
         //Для проверки авторизации, входим в личный кабинет
-        constructorPage.pressAccountButton();
+        constructorPage.pressTabButton(accountButton);
 
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);
@@ -40,7 +41,7 @@ public class LoginTest extends AbstractTest {
     public void authThroughAccountButton() {
         //Нажимаем на кнопку Войти в аккаунт
         AbstractPage abstractPage = new AbstractPage(driver);
-        abstractPage.pressAccountButton();
+        abstractPage.pressTabButton(accountButton);
 
         //Попадаем на страницу входа
         LoginPage loginPage = new LoginPage(driver);
@@ -48,7 +49,7 @@ public class LoginTest extends AbstractTest {
         loginPage.loginWith(LOGIN, PASSWORD);
 
         //Для проверки авторизации, входим в личный кабинет
-        abstractPage.pressAccountButton();
+        abstractPage.pressTabButton(accountButton);
 
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);
@@ -71,7 +72,7 @@ public class LoginTest extends AbstractTest {
 
         //Для проверки авторизации, входим в личный кабинет
         AbstractPage abstractPage = new AbstractPage(driver);
-        abstractPage.pressAccountButton();
+        abstractPage.pressTabButton(accountButton);
 
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);
@@ -94,7 +95,7 @@ public class LoginTest extends AbstractTest {
 
         //Для проверки авторизации, входим в личный кабинет
         AbstractPage abstractPage = new AbstractPage(driver);
-        abstractPage.pressAccountButton();
+        abstractPage.pressTabButton(accountButton);
 
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);

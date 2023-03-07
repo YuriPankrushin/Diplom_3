@@ -27,4 +27,12 @@ public class AccountPage extends AbstractPage {
         By accountInputField = By.xpath(String.format(".//div[.//label[text()='%s']]/input", fieldName));
         return driver.findElement(accountInputField).getAttribute("value");
     }
+
+    public void openAccountPage(String login, String password) {
+        pressTabButton(accountButton);
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.loginWith(login, password);
+        pressTabButton(accountButton);
+        observeNotificationText();
+    }
 }

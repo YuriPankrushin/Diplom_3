@@ -23,4 +23,8 @@ public class AccountPage extends AbstractPage {
                 .until(ExpectedConditions.visibilityOfElementLocated(notificationText));
     }
 
+    public String getValueFromField(String fieldName) {
+        By accountInputField = By.xpath(String.format(".//div[.//label[text()='%s']]/input", fieldName));
+        return driver.findElement(accountInputField).getAttribute("value");
+    }
 }

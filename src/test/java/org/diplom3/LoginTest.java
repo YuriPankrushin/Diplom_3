@@ -20,7 +20,6 @@ import static org.diplom3.utils.Constants.PASSWORD;
 public class LoginTest extends AbstractTest {
     private WebDriver driver;
 
-
     @Before
     public void startUp() {
         WebDriverManager.chromedriver().setup();

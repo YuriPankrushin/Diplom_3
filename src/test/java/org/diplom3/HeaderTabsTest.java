@@ -34,7 +34,7 @@ public class HeaderTabsTest extends AbstractTest {
 
     @Test
     @DisplayName("Переход из личного кабинета по табам хедера страницы")
-    @Description("Проверь переход по клику на «Конструктор» и на логотип Stellar Burgers")
+    @Description("Проверить переход по клику на «Конструктор» и на логотип Stellar Burgers")
     public void clickConstructorButtonFromAccountPage() {
         //Открываем личный кабинет авторизованного пользователя
         AccountPage accountPage = new AccountPage(driver);

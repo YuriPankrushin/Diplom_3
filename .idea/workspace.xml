@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c4d214d-a9f1-4fa7-b82a-8d3d170a8986" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/AbstractPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/AbstractPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/AccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/AccountPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/ConstructorPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diplom3/pages/ConstructorPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/diplom3/HeaderTabsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/diplom3/HeaderTabsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +41,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.HeaderTabsTest">
+  <component name="RunManager" selected="JUnit.LogoutTest">
     <configuration name="AccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diplom_3" />
       <extension name="coverage">
@@ -98,7 +96,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.diplom3 in Diplom_3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LogoutTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diplom_3" />
       <extension name="coverage">
         <pattern>
@@ -107,18 +105,19 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.diplom3" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="MAIN_CLASS_NAME" value="org.diplom3.LogoutTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LogoutTest" />
         <item itemvalue="JUnit.HeaderTabsTest" />
         <item itemvalue="JUnit.AccountTest.accessToAccountTest" />
         <item itemvalue="JUnit.AccountTest" />
         <item itemvalue="JUnit.All in Diplom_3" />
-        <item itemvalue="JUnit.org.diplom3 in Diplom_3" />
       </list>
     </recent_temporary>
   </component>

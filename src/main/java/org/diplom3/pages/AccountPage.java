@@ -17,6 +17,9 @@ public class AccountPage extends AbstractPage {
     //Кнопка Войти в аккаунт
     private final By notificationText = By.xpath(".//p[text()='В этом разделе вы можете изменить свои персональные данные']");
 
+    //Кнопка Выход
+    private final By logoutButton = By.xpath(".//button[text()='Выход']");
+
     //Проверить видимость информационного текста
     public void observeNotificationText() {
         new WebDriverWait(driver, 3)
@@ -34,5 +37,9 @@ public class AccountPage extends AbstractPage {
         loginPage.loginWith(login, password);
         pressTabButton(accountButton);
         observeNotificationText();
+    }
+
+    public void pressLogoutButton() {
+        driver.findElement(logoutButton).click();
     }
 }

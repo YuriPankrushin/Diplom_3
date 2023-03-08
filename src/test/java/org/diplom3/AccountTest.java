@@ -36,7 +36,7 @@ public class AccountTest extends BaseTest {
         AccountPage accountPage = new AccountPage(driver);
         accountPage.checkNotificationText();
         Assert.assertEquals("Имя должно совпадать с имененм при регистрации пользователя", "Юрий", accountPage.getValueFromField("Имя"));
-        Assert.assertEquals("Имя должно совпадать с имененм при регистрации пользователя", "pankrushinyuri@mail.ru", accountPage.getValueFromField("Логин"));
-        Assert.assertEquals("Имя должно совпадать с имененм при регистрации пользователя", "*****", accountPage.getValueFromField("Пароль"));
+        Assert.assertEquals("Email должен совпадать с email при регистрации пользователя", "pankrushinyuri@mail.ru", accountPage.getValueFromField("Логин"));
+        Assert.assertEquals("Пароль должен быть скрыт пятью звездочками", "*****", accountPage.getValueFromField("Пароль"));
     }
 }

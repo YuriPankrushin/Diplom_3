@@ -2,11 +2,31 @@ package org.diplom3;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
+import org.diplom3.pages.BasePage;
 import org.diplom3.pages.ConstructorPage;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
+@RunWith(Parameterized.class)
 public class ConstructorTest extends BaseTest {
+
+    private final String ingredientTabName;
+
+    public ConstructorTest(String ingredientTabName) {
+        this.ingredientTabName = ingredientTabName;
+    }
+
+    @Parameterized.Parameters
+    public static Object[][] getTestData() {
+        BasePage basePage = new BasePage(driver);
+        return new Object[][]{
+                {"Булки"},
+                {"Соусы"},
+                {"Начинки"},
+        };
+    }
 
     @Test
     @DisplayName("Проверка перехода по вкладкам ингридиентов")
@@ -17,15 +37,15 @@ public class ConstructorTest extends BaseTest {
         constructorPage.checkMainHeader();
         constructorPage.checkBurgerConstructorBasket();
 
-        //Проверить, что текущая вкладка является активной
-        Assert.assertTrue(constructorPage.returnClassNameOfTheIngredientTabElement("Булки").contains("current"));
-        //Нажать на вкладку ингридиентов: Соусы
-        constructorPage.clickOnIngredientTab("Соусы");
-        //Проверить, что выбранная вкладка является активной
-        Assert.assertTrue(constructorPage.returnClassNameOfTheIngredientTabElement("Соусы").contains("current"));
-        //Нажать на вкладку ингридиентов: Начинки
-        constructorPage.clickOnIngredientTab("Начинки");
-        //Проверить, что выбранная вкладка является активной
-        Assert.assertTrue(constructorPage.returnClassNameOfTheIngredientTabElement("Начинки").contains("current"));
+        if (constructorPage.returnClassNameOfTheIngredientTabElement(ingredientTabName).contains("current")) {
+            //Проверить, что выбранная вкладка является активной
+            Assert.assertTrue(constructorPage.returnClassNameOfTheIngredientTabElement(ingredientTabName).contains("current"));
+        }
+        else {
+            //Нажать на неактивную вкладку
+            constructorPage.clickOnIngredientTab(ingredientTabName);
+            //Проверить, что выбранная вкладка является активной
+            Assert.assertTrue(constructorPage.returnClassNameOfTheIngredientTabElement(ingredientTabName).contains("current"));
+        }
     }
 }

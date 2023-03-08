@@ -1,4 +1,4 @@
-package org.diplom3;
+package org.diplom3.googlechrome;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.diplom3.api.UserApi;

@@ -1,11 +1,11 @@
-package org.diplom3;
+package org.diplom3.yandexbrowser;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.diplom3.model.User;
-import org.diplom3.pages.BasePage;
 import org.diplom3.pages.AccountPage;
+import org.diplom3.pages.BasePage;
 import org.diplom3.pages.ConstructorPage;
 import org.diplom3.pages.LoginPage;
 import org.junit.AfterClass;

@@ -44,12 +44,6 @@ public class BasePage {
         driver.findElement(loginLink).click();
     }
 
-    //Проверить видимость поля Имя
-    public void checkNameField() {
-        new WebDriverWait(driver, 3)
-                .until(ExpectedConditions.elementToBeClickable(nameField));
-    }
-
     //Проверить видимость поля Email
     public void checkEmailField() {
         new WebDriverWait(driver, 3)

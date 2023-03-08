@@ -1,4 +1,4 @@
-package org.diplom3;
+package org.diplom3.googlechrome;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;

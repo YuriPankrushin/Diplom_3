@@ -9,7 +9,6 @@ public class UserApi extends BaseApi {
 
     final static String REGISTER = "/api/auth/register";
     final static String LOGIN = "/api/auth/login";
-    final static String USER_DATA = "/api/auth/user";
     final static String DELETE = "/api/auth/user";
 
     //Создание пользователя
@@ -26,15 +25,6 @@ public class UserApi extends BaseApi {
                 .body(user)
                 .when()
                 .post(LOGIN);
-    }
-
-    //Обновление информации о пользователе
-    public Response patchUserData(User user, String token) {
-        return given(requestSpecification)
-                .header("Authorization", "Bearer "+ token)
-                .body(user)
-                .when()
-                .patch(USER_DATA);
     }
 
     //Удаление пользователя

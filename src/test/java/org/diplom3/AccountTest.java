@@ -2,25 +2,25 @@ package org.diplom3;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import org.diplom3.pages.AbstractPage;
+import org.diplom3.pages.BasePage;
 import org.diplom3.pages.AccountPage;
 import org.diplom3.pages.ConstructorPage;
 import org.diplom3.pages.LoginPage;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.diplom3.pages.AbstractPage.accountButton;
+import static org.diplom3.pages.BasePage.accountButton;
 import static org.diplom3.utils.Constants.LOGIN;
 import static org.diplom3.utils.Constants.PASSWORD;
 
-public class AccountTest extends AbstractTest{
+public class AccountTest extends BaseTest {
 
     @Test
     @DisplayName("Проверь переход по клику на «Личный кабинет»")
     @Description("Проверь, что авторизованный пользовать попадет в личный кабинет при нажатии одноименной кнопки")
     public void accessToAccountTest() {
         //Нажимаем на кнопку Личный кабинет
-        AbstractPage abstractPage = new AbstractPage(driver);
+        BasePage abstractPage = new BasePage(driver);
         abstractPage.pressTabButton(accountButton);
         //Авторизуем пользователя
         LoginPage loginPage = new LoginPage(driver);

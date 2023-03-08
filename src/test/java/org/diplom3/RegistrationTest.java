@@ -6,7 +6,7 @@ import org.diplom3.pages.LoginPage;
 import org.diplom3.pages.RegistrationPage;
 import org.junit.Test;
 
-public class RegistrationTest extends AbstractTest {
+public class RegistrationTest extends BaseTest {
 
     @Test
     @DisplayName("Успешная регистрация")

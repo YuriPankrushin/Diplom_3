@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.diplom3.utils.Constants.BASE_URL;
 
-public class AbstractTest {
+public class BaseTest {
 
     static protected WebDriver driver;
 

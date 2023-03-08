@@ -6,7 +6,7 @@ import org.diplom3.pages.ConstructorPage;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ConstructorTest extends AbstractTest {
+public class ConstructorTest extends BaseTest {
 
     @Test
     @DisplayName("Выход из аккаунта")

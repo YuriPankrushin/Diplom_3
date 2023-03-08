@@ -2,7 +2,7 @@ package org.diplom3;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import org.diplom3.pages.AbstractPage;
+import org.diplom3.pages.BasePage;
 import org.diplom3.pages.AccountPage;
 import org.diplom3.pages.ConstructorPage;
 import org.junit.Test;
@@ -10,13 +10,13 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
 
-import static org.diplom3.pages.AbstractPage.constructorButton;
-import static org.diplom3.pages.AbstractPage.stellarBurgerLogo;
+import static org.diplom3.pages.BasePage.constructorButton;
+import static org.diplom3.pages.BasePage.stellarBurgerLogo;
 import static org.diplom3.utils.Constants.LOGIN;
 import static org.diplom3.utils.Constants.PASSWORD;
 
 @RunWith(Parameterized.class)
-public class HeaderTabsTest extends AbstractTest {
+public class HeaderTabsTest extends BaseTest {
 
     private final By headerButton;
 
@@ -41,7 +41,7 @@ public class HeaderTabsTest extends AbstractTest {
         accountPage.openAccountPage(LOGIN, PASSWORD);
 
         //Нажимаем необходимую кнопку
-        AbstractPage abstractPage = new AbstractPage(driver);
+        BasePage abstractPage = new BasePage(driver);
         abstractPage.pressTabButton(headerButton);
 
         //Попадаем на главный экран

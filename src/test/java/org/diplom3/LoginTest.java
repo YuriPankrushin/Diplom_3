@@ -2,17 +2,17 @@ package org.diplom3;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import org.diplom3.pages.AbstractPage;
+import org.diplom3.pages.BasePage;
 import org.diplom3.pages.AccountPage;
 import org.diplom3.pages.ConstructorPage;
 import org.diplom3.pages.LoginPage;
 import org.junit.Test;
 
-import static org.diplom3.pages.AbstractPage.accountButton;
+import static org.diplom3.pages.BasePage.accountButton;
 import static org.diplom3.utils.Constants.LOGIN;
 import static org.diplom3.utils.Constants.PASSWORD;
 
-public class LoginTest extends AbstractTest {
+public class LoginTest extends BaseTest {
 
     @Test
     @DisplayName("Вход по кнопке «Войти в аккаунт» на главной странице")
@@ -40,7 +40,7 @@ public class LoginTest extends AbstractTest {
     @Description("Проверить, что пользователь может успешно авторизоваться на сайте, пройдя к форме входа по ккнопке «Лчный кабинет»")
     public void authThroughAccountButton() {
         //Нажимаем на кнопку Войти в аккаунт
-        AbstractPage abstractPage = new AbstractPage(driver);
+        BasePage abstractPage = new BasePage(driver);
         abstractPage.pressTabButton(accountButton);
 
         //Попадаем на страницу входа
@@ -71,7 +71,7 @@ public class LoginTest extends AbstractTest {
         loginPage.loginWith(LOGIN, PASSWORD);
 
         //Для проверки авторизации, входим в личный кабинет
-        AbstractPage abstractPage = new AbstractPage(driver);
+        BasePage abstractPage = new BasePage(driver);
         abstractPage.pressTabButton(accountButton);
 
         // Проверяем, что попали в личный кабинет
@@ -94,7 +94,7 @@ public class LoginTest extends AbstractTest {
         loginPage.loginWith(LOGIN, PASSWORD);
 
         //Для проверки авторизации, входим в личный кабинет
-        AbstractPage abstractPage = new AbstractPage(driver);
+        BasePage abstractPage = new BasePage(driver);
         abstractPage.pressTabButton(accountButton);
 
         // Проверяем, что попали в личный кабинет

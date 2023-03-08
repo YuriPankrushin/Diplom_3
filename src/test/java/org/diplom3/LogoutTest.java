@@ -9,7 +9,7 @@ import org.junit.Test;
 import static org.diplom3.utils.Constants.LOGIN;
 import static org.diplom3.utils.Constants.PASSWORD;
 
-public class LogoutTest extends AbstractTest {
+public class LogoutTest extends BaseTest {
 
     @Test
     @DisplayName("Выход из аккаунта")

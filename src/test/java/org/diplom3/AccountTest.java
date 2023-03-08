@@ -9,7 +9,6 @@ import org.diplom3.pages.LoginPage;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.diplom3.pages.BasePage.accountButton;
 import static org.diplom3.utils.Constants.LOGIN;
 import static org.diplom3.utils.Constants.PASSWORD;
 
@@ -20,8 +19,8 @@ public class AccountTest extends BaseTest {
     @Description("Проверь, что авторизованный пользовать попадет в личный кабинет при нажатии одноименной кнопки")
     public void accessToAccountTest() {
         //Нажимаем на кнопку Личный кабинет
-        BasePage abstractPage = new BasePage(driver);
-        abstractPage.pressTabButton(accountButton);
+        BasePage basePage = new BasePage(driver);
+        basePage.pressTabButton(basePage.getAccountButton());
         //Авторизуем пользователя
         LoginPage loginPage = new LoginPage(driver);
         loginPage.loginWith(LOGIN, PASSWORD);
@@ -31,7 +30,7 @@ public class AccountTest extends BaseTest {
         constructorPage.observeMakeOrderButton();
 
         //Переходим в личный кабинет
-        constructorPage.pressTabButton(accountButton);
+        constructorPage.pressTabButton(basePage.getAccountButton());
 
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);

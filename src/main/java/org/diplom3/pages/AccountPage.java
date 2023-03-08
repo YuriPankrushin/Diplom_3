@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AccountPage extends BasePage {
 
-    public final WebDriver driver;
+    private final WebDriver driver;
 
     public AccountPage(WebDriver driver){
         super(driver);
@@ -32,10 +32,11 @@ public class AccountPage extends BasePage {
     }
 
     public void openAccountPage(String login, String password) {
-        pressTabButton(accountButton);
+        BasePage basePage = new BasePage(driver);
+        pressTabButton(basePage.getAccountButton());
         LoginPage loginPage = new LoginPage(driver);
         loginPage.loginWith(login, password);
-        pressTabButton(accountButton);
+        pressTabButton(basePage.getAccountButton());
         observeNotificationText();
     }
 

@@ -8,7 +8,6 @@ import org.diplom3.pages.ConstructorPage;
 import org.diplom3.pages.LoginPage;
 import org.junit.Test;
 
-import static org.diplom3.pages.BasePage.accountButton;
 import static org.diplom3.utils.Constants.LOGIN;
 import static org.diplom3.utils.Constants.PASSWORD;
 
@@ -28,7 +27,8 @@ public class LoginTest extends BaseTest {
         loginPage.loginWith(LOGIN, PASSWORD);
 
         //Для проверки авторизации, входим в личный кабинет
-        constructorPage.pressTabButton(accountButton);
+        BasePage basePage = new BasePage(driver);
+        constructorPage.pressTabButton(basePage.getAccountButton());
 
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);
@@ -40,8 +40,8 @@ public class LoginTest extends BaseTest {
     @Description("Проверить, что пользователь может успешно авторизоваться на сайте, пройдя к форме входа по ккнопке «Лчный кабинет»")
     public void authThroughAccountButton() {
         //Нажимаем на кнопку Войти в аккаунт
-        BasePage abstractPage = new BasePage(driver);
-        abstractPage.pressTabButton(accountButton);
+        BasePage basePage = new BasePage(driver);
+        basePage.pressTabButton(basePage.getAccountButton());
 
         //Попадаем на страницу входа
         LoginPage loginPage = new LoginPage(driver);
@@ -49,7 +49,7 @@ public class LoginTest extends BaseTest {
         loginPage.loginWith(LOGIN, PASSWORD);
 
         //Для проверки авторизации, входим в личный кабинет
-        abstractPage.pressTabButton(accountButton);
+        basePage.pressTabButton(basePage.getAccountButton());
 
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);
@@ -71,8 +71,8 @@ public class LoginTest extends BaseTest {
         loginPage.loginWith(LOGIN, PASSWORD);
 
         //Для проверки авторизации, входим в личный кабинет
-        BasePage abstractPage = new BasePage(driver);
-        abstractPage.pressTabButton(accountButton);
+        BasePage basePage = new BasePage(driver);
+        basePage.pressTabButton(basePage.getAccountButton());
 
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);
@@ -94,8 +94,8 @@ public class LoginTest extends BaseTest {
         loginPage.loginWith(LOGIN, PASSWORD);
 
         //Для проверки авторизации, входим в личный кабинет
-        BasePage abstractPage = new BasePage(driver);
-        abstractPage.pressTabButton(accountButton);
+        BasePage basePage = new BasePage(driver);
+        basePage.pressTabButton(basePage.getAccountButton());
 
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);

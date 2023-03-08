@@ -15,13 +15,13 @@ public class BasePage {
     }
 
     //Основное лого
-    public static final By stellarBurgerLogo = By.xpath(".//div[contains(@class, 'AppHeader')]");
+    private final By stellarBurgerLogo = By.xpath(".//div[contains(@class, 'AppHeader')]");
 
     //Кнопка Конструктор
-    public static final By constructorButton = By.xpath(".//p[text()='Конструктор']");
+    private final By constructorButton = By.xpath(".//p[text()='Конструктор']");
 
     //Кнопка Личный Кабинет
-    public static final By accountButton = By.xpath(".//p[text()='Личный Кабинет']");
+    private final By accountButton = By.xpath(".//p[text()='Личный Кабинет']");
 
     //Ссылка Войти (располагается на страницах регистрации и сброса пароля)
     private final By loginLink = By.xpath(".//a[text()='Войти']");
@@ -78,5 +78,17 @@ public class BasePage {
     public void setPassword(String password) {
         driver.findElement(passwordField).click();
         driver.findElement(passwordField).sendKeys(password);
+    }
+
+    public By getStellarBurgerLogo() {
+        return stellarBurgerLogo;
+    }
+
+    public By getConstructorButton() {
+        return constructorButton;
+    }
+
+    public By getAccountButton() {
+        return accountButton;
     }
 }

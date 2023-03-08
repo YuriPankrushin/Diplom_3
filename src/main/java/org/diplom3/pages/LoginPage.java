@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends BasePage {
 
-    public final WebDriver driver;
+    private final WebDriver driver;
 
     public LoginPage(WebDriver driver){
         super(driver);
@@ -47,13 +47,15 @@ public class LoginPage extends BasePage {
     }
 
     public void goToRegistrationPage() {
-        pressTabButton(accountButton);
+        BasePage basePage = new BasePage(driver);
+        pressTabButton(basePage.getAccountButton());
         observeLoginHeader();
         pressRegistrationLink();
     }
 
     public void goToResetPasswordPage() {
-        pressTabButton(accountButton);
+        BasePage basePage = new BasePage(driver);
+        pressTabButton(basePage.getAccountButton());
         observeLoginHeader();
         pressPasswordResetLink();
     }

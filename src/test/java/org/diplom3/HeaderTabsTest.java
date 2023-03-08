@@ -10,8 +10,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
 
-import static org.diplom3.pages.BasePage.constructorButton;
-import static org.diplom3.pages.BasePage.stellarBurgerLogo;
 import static org.diplom3.utils.Constants.LOGIN;
 import static org.diplom3.utils.Constants.PASSWORD;
 
@@ -26,9 +24,10 @@ public class HeaderTabsTest extends BaseTest {
 
     @Parameterized.Parameters
     public static Object[][] getTestData() {
+        BasePage basePage = new BasePage(driver);
         return new Object[][]{
-                {constructorButton},
-                {stellarBurgerLogo},
+                {basePage.getConstructorButton()},
+                {basePage.getStellarBurgerLogo()},
         };
     }
 
@@ -41,8 +40,8 @@ public class HeaderTabsTest extends BaseTest {
         accountPage.openAccountPage(LOGIN, PASSWORD);
 
         //Нажимаем необходимую кнопку
-        BasePage abstractPage = new BasePage(driver);
-        abstractPage.pressTabButton(headerButton);
+        BasePage basePage = new BasePage(driver);
+        basePage.pressTabButton(headerButton);
 
         //Попадаем на главный экран
         ConstructorPage constructorPage = new ConstructorPage(driver);

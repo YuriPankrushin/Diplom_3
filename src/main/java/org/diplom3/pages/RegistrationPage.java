@@ -8,7 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Random;
 
 public class RegistrationPage extends BasePage {
-    public final WebDriver driver;
+
+    private final WebDriver driver;
 
     public RegistrationPage(WebDriver driver){
         super(driver);

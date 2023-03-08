@@ -1,11 +1,10 @@
 package org.diplom3.pages;
 
+import org.diplom3.model.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.Random;
 
 public class RegistrationPage extends BasePage {
 
@@ -40,23 +39,12 @@ public class RegistrationPage extends BasePage {
                 .until(ExpectedConditions.visibilityOfElementLocated(passwordValidationError));
     }
 
-    public void setNewUserCorrectData(){
+    public void setNewUserData(User user){
         //Проверить правильный заголовок страницы
         checkRegistrationHeader();
         //Ввести данные для регистрации: имя, email, пароль (с использованием случайных чисел)
-        Random random = new Random();
-        setName("user" + random.nextInt(10000000));
-        setEmail("box" + random.nextInt(10000000) + "@yandex.ru");
-        setPassword("password");
-    }
-
-    public void setNewUserDataWithShortPassword(){
-        //Проверить правильный заголовок страницы
-        checkRegistrationHeader();
-        //Ввести данные для регистрации: имя, email, пароль (с использованием случайных чисел)
-        Random random = new Random();
-        setName("user" + random.nextInt(10000000));
-        setEmail("box" + random.nextInt(10000000) + "@yandex.ru");
-        setPassword("short");
+        setName(user.getName());
+        setEmail(user.getEmail());
+        setPassword(user.getPassword());
     }
 }

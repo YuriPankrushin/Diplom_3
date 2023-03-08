@@ -32,7 +32,7 @@ public class LoginTest extends BaseTest {
 
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);
-        accountPage.observeNotificationText();
+        accountPage.checkNotificationText();
     }
 
     @Test
@@ -53,7 +53,7 @@ public class LoginTest extends BaseTest {
 
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);
-        accountPage.observeNotificationText();
+        accountPage.checkNotificationText();
     }
 
     @Test
@@ -76,7 +76,7 @@ public class LoginTest extends BaseTest {
 
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);
-        accountPage.observeNotificationText();
+        accountPage.checkNotificationText();
     }
 
     @Test
@@ -99,6 +99,6 @@ public class LoginTest extends BaseTest {
 
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);
-        accountPage.observeNotificationText();
+        accountPage.checkNotificationText();
     }
 }

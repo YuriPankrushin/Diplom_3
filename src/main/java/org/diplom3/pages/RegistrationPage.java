@@ -25,7 +25,7 @@ public class RegistrationPage extends BasePage {
     //Валидация пароля
     private final By passwordValidationError = By.xpath(".//p[text()='Некорректный пароль']");
 
-    public void observeRegistrationHeader(){
+    public void checkRegistrationHeader(){
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(registrationHeader));
     }
@@ -35,14 +35,14 @@ public class RegistrationPage extends BasePage {
         driver.findElement(registrationButton).click();
     }
 
-    public void observePasswordValidationAppeared(){
+    public void checkPasswordValidationAppeared(){
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(passwordValidationError));
     }
 
     public void setNewUserCorrectData(){
         //Проверить правильный заголовок страницы
-        observeRegistrationHeader();
+        checkRegistrationHeader();
         //Ввести данные для регистрации: имя, email, пароль (с использованием случайных чисел)
         Random random = new Random();
         setName("user" + random.nextInt(10000000));
@@ -52,7 +52,7 @@ public class RegistrationPage extends BasePage {
 
     public void setNewUserDataWithShortPassword(){
         //Проверить правильный заголовок страницы
-        observeRegistrationHeader();
+        checkRegistrationHeader();
         //Ввести данные для регистрации: имя, email, пароль (с использованием случайных чисел)
         Random random = new Random();
         setName("user" + random.nextInt(10000000));

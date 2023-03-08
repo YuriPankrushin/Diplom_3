@@ -21,7 +21,7 @@ public class AccountPage extends BasePage {
     private final By logoutButton = By.xpath(".//button[text()='Выход']");
 
     //Проверить видимость информационного текста
-    public void observeNotificationText() {
+    public void checkNotificationText() {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(notificationText));
     }
@@ -37,7 +37,7 @@ public class AccountPage extends BasePage {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.loginWith(login, password);
         pressTabButton(basePage.getAccountButton());
-        observeNotificationText();
+        checkNotificationText();
     }
 
     public void pressLogoutButton() {

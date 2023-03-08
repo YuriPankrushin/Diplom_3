@@ -14,8 +14,8 @@ public class ConstructorTest extends BaseTest {
     public void logoutButtonClickShouldRemoveUserAuthorization() {
         //Проверить страницу конструктора
         ConstructorPage constructorPage = new ConstructorPage(driver);
-        constructorPage.observeMainHeader();
-        constructorPage.observeBurgerConstructorBasket();
+        constructorPage.checkMainHeader();
+        constructorPage.checkBurgerConstructorBasket();
 
         //Проверить, что текущая вкладка является активной
         Assert.assertTrue(constructorPage.returnIsCurrentFlag("Булки").contains("current"));

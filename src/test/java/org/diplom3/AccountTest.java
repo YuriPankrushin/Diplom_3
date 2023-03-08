@@ -27,14 +27,14 @@ public class AccountTest extends BaseTest {
 
         //Для проверки авторизации, проверяем появление кнопки Оформить заказ
         ConstructorPage constructorPage = new ConstructorPage(driver);
-        constructorPage.observeMakeOrderButton();
+        constructorPage.checkMakeOrderButton();
 
         //Переходим в личный кабинет
         constructorPage.pressTabButton(basePage.getAccountButton());
 
         // Проверяем, что попали в личный кабинет
         AccountPage accountPage = new AccountPage(driver);
-        accountPage.observeNotificationText();
+        accountPage.checkNotificationText();
         Assert.assertEquals("Имя должно совпадать с имененм при регистрации пользователя", "Юрий", accountPage.getValueFromField("Имя"));
         Assert.assertEquals("Имя должно совпадать с имененм при регистрации пользователя", "pankrushinyuri@mail.ru", accountPage.getValueFromField("Логин"));
         Assert.assertEquals("Имя должно совпадать с имененм при регистрации пользователя", "*****", accountPage.getValueFromField("Пароль"));

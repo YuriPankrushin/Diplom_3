@@ -32,19 +32,19 @@ public class ConstructorPage extends BasePage {
     }
 
     //Проверить наличие кнопки Оформить заказ
-    public void observeMakeOrderButton() {
+    public void checkMakeOrderButton() {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(makeOrder));
     }
 
     //Проверить наличие заголовка
-    public void observeMainHeader() {
+    public void checkMainHeader() {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(mainHeader));
     }
 
     //Проверить наличие корзины для ингридиентов
-    public void observeBurgerConstructorBasket() {
+    public void checkBurgerConstructorBasket() {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(burgerConstructorBasket));
     }

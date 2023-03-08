@@ -39,6 +39,6 @@ public class RegistrationTest extends BaseTest {
         //Нажать на кнопку Зарегистрироваться
         registrationPage.pressRegistrationButton();
         //Проверить валидацию пароля
-        registrationPage.observePasswordValidationAppeared();
+        registrationPage.checkPasswordValidationAppeared();
     }
 }

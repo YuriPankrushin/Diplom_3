@@ -46,8 +46,8 @@ public class HeaderTabsTest extends BaseTest {
         //Попадаем на главный экран
         ConstructorPage constructorPage = new ConstructorPage(driver);
         //Проверяем наличие заголовка, корзины конструктора и кнопки Оформить заказ
-        constructorPage.observeMainHeader();
-        constructorPage.observeBurgerConstructorBasket();
-        constructorPage.observeMakeOrderButton();
+        constructorPage.checkMainHeader();
+        constructorPage.checkBurgerConstructorBasket();
+        constructorPage.checkMakeOrderButton();
     }
 }

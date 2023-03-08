@@ -51,13 +51,13 @@ public class BasePage {
     }
 
     //Проверить видимость поля Email
-    public void observeEmailField() {
+    public void checkEmailField() {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.elementToBeClickable(emailField));
     }
 
     //Проверить видимость поля Пароль
-    public void observePasswordField() {
+    public void checkPasswordField() {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.elementToBeClickable(passwordField));
     }

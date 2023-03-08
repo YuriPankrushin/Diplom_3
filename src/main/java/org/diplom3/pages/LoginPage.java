@@ -26,7 +26,7 @@ public class LoginPage extends BasePage {
     //Ссылка на восстановление пароля
     private final By resetPasswordLink = By.xpath(".//a[text()='Восстановить пароль']");
 
-    public void observeLoginHeader(){
+    public void checkLoginHeader(){
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(loginHeader));
     }
@@ -49,21 +49,21 @@ public class LoginPage extends BasePage {
     public void goToRegistrationPage() {
         BasePage basePage = new BasePage(driver);
         pressTabButton(basePage.getAccountButton());
-        observeLoginHeader();
+        checkLoginHeader();
         pressRegistrationLink();
     }
 
     public void goToResetPasswordPage() {
         BasePage basePage = new BasePage(driver);
         pressTabButton(basePage.getAccountButton());
-        observeLoginHeader();
+        checkLoginHeader();
         pressPasswordResetLink();
     }
 
     public void verifyLoginPageFields() {
-        observeLoginHeader();
-        observeEmailField();
-        observePasswordField();
+        checkLoginHeader();
+        checkEmailField();
+        checkPasswordField();
     }
 
     public void loginWith(String email, String password) {

@@ -45,7 +45,7 @@ public class BasePage {
     }
 
     //Проверить видимость поля Имя
-    public void observeNameField() {
+    public void checkNameField() {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.elementToBeClickable(nameField));
     }

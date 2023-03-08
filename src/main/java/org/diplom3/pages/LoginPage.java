@@ -1,5 +1,6 @@
 package org.diplom3.pages;
 
+import org.diplom3.model.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -66,9 +67,9 @@ public class LoginPage extends BasePage {
         checkPasswordField();
     }
 
-    public void loginWith(String email, String password) {
-        setEmail(email);
-        setPassword(password);
+    public void loginWith(User user) {
+        setEmail(user.getEmail());
+        setPassword(user.getPassword());
         pressLoginButton();
     }
 }

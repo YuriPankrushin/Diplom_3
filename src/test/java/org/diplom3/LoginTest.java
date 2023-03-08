@@ -2,16 +2,37 @@ package org.diplom3;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
+import io.restassured.response.Response;
+import org.diplom3.model.User;
 import org.diplom3.pages.BasePage;
 import org.diplom3.pages.AccountPage;
 import org.diplom3.pages.ConstructorPage;
 import org.diplom3.pages.LoginPage;
+import org.junit.AfterClass;
 import org.junit.Test;
 
-import static org.diplom3.utils.Constants.LOGIN;
-import static org.diplom3.utils.Constants.PASSWORD;
+import java.util.Random;
+
 
 public class LoginTest extends BaseTest {
+
+    /** Тестовые данные */
+    //Данные пользователя
+    static Random random = new Random();
+    static User user = new User("box" + random.nextInt(10000000) + "@yandex.ru", "password", "user" + random.nextInt(10000000));
+    //Регистрируем пользователя
+    static Response userRegisteredData = userApi.userRegister(user);
+
+    @AfterClass
+    public static void testDataClear(){
+        /** Удаление тестовых данных */
+        //Удаление пользователя
+        try {
+            userApi.userDelete(userApi.getUserAccessToken(userApi.userLogin(user)));
+        } catch (NullPointerException e) {
+            System.out.println("Некорректное поведение: пользователь должен был быть создан, а затем удалиться. Необходимо проверить входные данные для теста.");
+        }
+    }
 
     @Test
     @DisplayName("Вход по кнопке «Войти в аккаунт» на главной странице")
@@ -24,7 +45,7 @@ public class LoginTest extends BaseTest {
         //Попадаем на страницу входа
         LoginPage loginPage = new LoginPage(driver);
         //Вводим данные и нажмаем кнопку войти
-        loginPage.loginWith(LOGIN, PASSWORD);
+        loginPage.loginWith(user);
 
         //Для проверки авторизации, входим в личный кабинет
         BasePage basePage = new BasePage(driver);
@@ -46,7 +67,7 @@ public class LoginTest extends BaseTest {
         //Попадаем на страницу входа
         LoginPage loginPage = new LoginPage(driver);
         //Вводим данные и нажмаем кнопку войти
-        loginPage.loginWith(LOGIN, PASSWORD);
+        loginPage.loginWith(user);
 
         //Для проверки авторизации, входим в личный кабинет
         basePage.pressTabButton(basePage.getAccountButton());
@@ -68,7 +89,7 @@ public class LoginTest extends BaseTest {
         loginPage.pressLoginLink();
 
         //Вводим данные и нажмаем кнопку войти
-        loginPage.loginWith(LOGIN, PASSWORD);
+        loginPage.loginWith(user);
 
         //Для проверки авторизации, входим в личный кабинет
         BasePage basePage = new BasePage(driver);
@@ -91,7 +112,7 @@ public class LoginTest extends BaseTest {
         loginPage.pressLoginLink();
 
         //Вводим данные и нажмаем кнопку войти
-        loginPage.loginWith(LOGIN, PASSWORD);
+        loginPage.loginWith(user);
 
         //Для проверки авторизации, входим в личный кабинет
         BasePage basePage = new BasePage(driver);

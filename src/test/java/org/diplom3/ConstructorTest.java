@@ -9,23 +9,23 @@ import org.junit.Test;
 public class ConstructorTest extends BaseTest {
 
     @Test
-    @DisplayName("Выход из аккаунта")
-    @Description("Проверить выход по кнопке «Выйти» в личном кабинете")
-    public void logoutButtonClickShouldRemoveUserAuthorization() {
+    @DisplayName("Проверка перехода по вкладкам ингридиентов")
+    @Description("Проверить переход по вкладкам ингридиентов: возможе клик по неактивной табе; выбранная вкладка становится активной ")
+    public void checkThatClickOnTabNamePlacesFocusOnIt() {
         //Проверить страницу конструктора
         ConstructorPage constructorPage = new ConstructorPage(driver);
         constructorPage.checkMainHeader();
         constructorPage.checkBurgerConstructorBasket();
 
         //Проверить, что текущая вкладка является активной
-        Assert.assertTrue(constructorPage.returnIsCurrentFlag("Булки").contains("current"));
+        Assert.assertTrue(constructorPage.returnClassNameOfTheIngredientTabElement("Булки").contains("current"));
         //Нажать на вкладку ингридиентов: Соусы
         constructorPage.clickOnIngredientTab("Соусы");
         //Проверить, что выбранная вкладка является активной
-        Assert.assertTrue(constructorPage.returnIsCurrentFlag("Соусы").contains("current"));
+        Assert.assertTrue(constructorPage.returnClassNameOfTheIngredientTabElement("Соусы").contains("current"));
         //Нажать на вкладку ингридиентов: Начинки
         constructorPage.clickOnIngredientTab("Начинки");
         //Проверить, что выбранная вкладка является активной
-        Assert.assertTrue(constructorPage.returnIsCurrentFlag("Начинки").contains("current"));
+        Assert.assertTrue(constructorPage.returnClassNameOfTheIngredientTabElement("Начинки").contains("current"));
     }
 }

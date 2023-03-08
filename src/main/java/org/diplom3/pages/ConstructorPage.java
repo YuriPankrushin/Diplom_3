@@ -55,7 +55,7 @@ public class ConstructorPage extends BasePage {
     }
 
     //Вернуть класс вкладки ингридиентов, для проверки активности
-    public String returnIsCurrentFlag(String ingredientTabName) {
+    public String returnClassNameOfTheIngredientTabElement(String ingredientTabName) {
         return driver.findElement(By.xpath(String.format(".//div[./span[text()='%s']]", ingredientTabName))).getAttribute("class");
     }
 }

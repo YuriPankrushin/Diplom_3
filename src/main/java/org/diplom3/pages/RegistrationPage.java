@@ -24,6 +24,18 @@ public class RegistrationPage extends BasePage {
     //Валидация пароля
     private final By passwordValidationError = By.xpath(".//p[text()='Некорректный пароль']");
 
+    //Поле Имя
+    private final By nameField = By.xpath(".//div[.//label[text()='Имя']][contains(@class, 'text')]/input");
+
+    //Поле Email
+    private final By emailField = By.xpath(".//div[.//label[text()='Email']][contains(@class, 'text')]/input");
+
+    //Поле Пароль
+    private final By passwordField = By.xpath(".//div[contains(@class, 'password')]/input");
+
+    //Ссылка Войти
+    private final By loginLink = By.xpath(".//a[text()='Войти']");
+
     public void checkRegistrationHeader(){
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(registrationHeader));
@@ -37,6 +49,27 @@ public class RegistrationPage extends BasePage {
     public void checkPasswordValidationAppeared(){
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(passwordValidationError));
+    }
+
+    public void pressLoginLink() {
+        driver.findElement(loginLink).click();
+    }
+
+    public void setName(String name) {
+        driver.findElement(nameField).click();
+        driver.findElement(nameField).sendKeys(name);
+    }
+
+    //Ввести Email
+    public void setEmail(String email) {
+        driver.findElement(emailField).click();
+        driver.findElement(emailField).sendKeys(email);
+    }
+
+    //Ввести Пароль
+    public void setPassword(String password) {
+        driver.findElement(passwordField).click();
+        driver.findElement(passwordField).sendKeys(password);
     }
 
     public void setNewUserData(User user){

@@ -18,6 +18,12 @@ public class LoginPage extends BasePage {
     //Заголовок Вход
     private final By loginHeader = By.xpath(".//h2[text()='Вход']");
 
+    //Поле Email
+    private final By emailField = By.xpath(".//div[.//label[text()='Email']][contains(@class, 'text')]/input");
+
+    //Поле Пароль
+    private final By passwordField = By.xpath(".//div[contains(@class, 'password')]/input");
+
     //Кнопка Войти
     private final By loginButton = By.xpath(".//button[text()='Войти']");
 
@@ -30,6 +36,30 @@ public class LoginPage extends BasePage {
     public void checkLoginHeader(){
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(loginHeader));
+    }
+
+    //Проверить видимость поля Email
+    public void checkEmailField() {
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.elementToBeClickable(emailField));
+    }
+
+    //Проверить видимость поля Пароль
+    public void checkPasswordField() {
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.elementToBeClickable(passwordField));
+    }
+
+    //Ввести Email
+    public void setEmail(String email) {
+        driver.findElement(emailField).click();
+        driver.findElement(emailField).sendKeys(email);
+    }
+
+    //Ввести Пароль
+    public void setPassword(String password) {
+        driver.findElement(passwordField).click();
+        driver.findElement(passwordField).sendKeys(password);
     }
 
     //Нажать кнопку Войти
@@ -46,6 +76,7 @@ public class LoginPage extends BasePage {
     public void pressPasswordResetLink() {
         driver.findElement(resetPasswordLink).click();
     }
+
 
     public void goToRegistrationPage() {
         BasePage basePage = new BasePage(driver);

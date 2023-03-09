@@ -8,6 +8,8 @@ import org.diplom3.pages.BasePage;
 import org.diplom3.pages.AccountPage;
 import org.diplom3.pages.ConstructorPage;
 import org.diplom3.pages.LoginPage;
+import org.diplom3.pages.RegistrationPage;
+import org.diplom3.pages.ResetPasswordPage;
 import org.junit.AfterClass;
 import org.junit.Test;
 
@@ -86,7 +88,8 @@ public class LoginTest extends BaseTest {
         loginPage.goToRegistrationPage();
 
         //Нажимаем ссылку на Вход
-        loginPage.pressLoginLink();
+        RegistrationPage registrationPage = new RegistrationPage(driver);
+        registrationPage.pressLoginLink();
 
         //Вводим данные и нажмаем кнопку войти
         loginPage.loginWith(user);
@@ -109,7 +112,8 @@ public class LoginTest extends BaseTest {
         loginPage.goToResetPasswordPage();
 
         //Нажимаем ссылку Восстановить пароль
-        loginPage.pressLoginLink();
+        ResetPasswordPage resetPasswordPage = new ResetPasswordPage(driver);
+        resetPasswordPage.pressLoginLink();
 
         //Вводим данные и нажмаем кнопку войти
         loginPage.loginWith(user);
